@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+    deemix:
+        image: registry.gitlab.com/bockiii/deemix-docker
+        container_name: Deemix
+        volumes:
+            - /Users/hrizkiou/Downloads/:/downloads
+            - /your/config/location:/config
+        environment:
+            - PUID=1000
+            - PGID=1000
+            - ARL=b517b1a4be594c1c718eae6f9580c325a95a6a60c3f593266e0ad563fb9139ca14378e5f4e9bf2128a993dd4103d4439fa33c35ed6ef280ff469b65b32a2cee4e60ba8e97e4198e08ab1235aafcb2c620a8eedd5c7a04f526a0ab679f067e946
+            - UMASK_SET=022
+            - DEEZUI=false
+        ports:
+            - 6595:6595
