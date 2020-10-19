@@ -6,7 +6,7 @@
 /*   By: hrizkiou <hrizkiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 01:27:23 by hrizkiou          #+#    #+#             */
-/*   Updated: 2020/10/17 04:19:30 by hrizkiou         ###   ########.fr       */
+/*   Updated: 2020/10/19 04:53:45 by hrizkiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,14 @@ typedef struct		s_data
 	int				bpp;
 	int				size_l;
 	int				endian;
-	double				c_r;
-	double				c_i;
-	int				z_r; // z_r * z_r + z_i * z_i 
-	int				z_i;
-	double				x1;
-	double				x2; 
-	double				y1;
-	double				y2; 
+	double			z_r;
+	double			z_i;
+	double			c_r;
+	double			c_i;
+	double			x1;
+	double			y1;
 	int				zoom;
+	int				it;
 	int				it_max;
 }					t_fractal;
 
