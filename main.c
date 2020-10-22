@@ -6,7 +6,7 @@
 /*   By: hrizkiou <hrizkiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/10 18:39:40 by hrizkiou          #+#    #+#             */
-/*   Updated: 2020/10/20 03:32:20 by hrizkiou         ###   ########.fr       */
+/*   Updated: 2020/10/22 05:12:21 by hrizkiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,15 @@ static	int		ft_error(int code)
 
 int				ft_assign(t_fractal *data, char **av)
 {
-	if (ft_strcmp(av[1], "Mandelbrot"))
-	{
+	ft_init(data);
+	if (ft_strcmp(av[1], "mandelbrot") == 0)
 		ft_mandelbrot(data);
-	}
-	else if (ft_strcmp(av[1], "Julia"))
-	{
+	else if (ft_strcmp(av[1], "julia") == 0)
 		ft_julia(data);
-	}
-	else if (ft_strcmp(av[1], "Autre")) 
-	{
-		/* code */
-	}
+	else if (ft_strcmp(av[1], "burningship") == 0)
+		ft_burningship(data);
+	else if (ft_strcmp(av[1], "tricorn") == 0) 
+		ft_tricorn(data);
 	return (0);
 }
 
@@ -70,17 +67,17 @@ int				main(int ac, char **av)
 	int count;
 	double tmp;
 	data->zoom = 100;
-	data->it_max = 30;
+	data->it_max = 80;
 	
 	if (ac != 2)
 		ft_error(0);
-	if (strcmp(av[1],"Mandelbrot") == 0)
+	if (!ft_assign(data, av))
 	{
-		ft_init(data);
-		ft_burningship(data);
 		mlx_put_image_to_window(data->mlx_ptr, data->mlx_win, data->img_ptr, 0, 0);
 		mlx_hook(data->mlx_win, 2, 0, key_hook, data);
-		//ft_menu(data);
+		mlx_hook(data->mlx_win, 4, 0, mouse_press_hook, data);
+		//mlx_hook(data->mlx_win, 5, 0, mouse_release_hook, data);
+		//mlx_hook(data->mlx_win, 6, 0, motion_hook, data);
 		mlx_loop(data->mlx_ptr);
 	}
 	else

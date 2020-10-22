@@ -6,7 +6,7 @@
 /*   By: hrizkiou <hrizkiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 00:39:06 by hrizkiou          #+#    #+#             */
-/*   Updated: 2020/10/20 03:33:41 by hrizkiou         ###   ########.fr       */
+/*   Updated: 2020/10/22 03:53:40 by hrizkiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,11 @@ void	ft_mandelbrot_op(t_fractal *data, int x, int y)
 {
 	double tmp;
 
-	data->c_r = -2 + (double)x / data->zoom;
-	data->c_i = -2 + (double)y / data->zoom;
+	data->x1 = -5;
+	data->y1 = -3;
+
+	data->c_r = data->x1 + (double)x / data->zoom;
+	data->c_i = data->y1 + (double)y / data->zoom;
 	data->z_r = data->c_r;
 	data->z_i = data->c_i;
 	data->it = 0;                                                                                                                                     

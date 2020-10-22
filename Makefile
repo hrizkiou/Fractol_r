@@ -6,14 +6,14 @@
 #    By: hrizkiou <hrizkiou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/10 18:41:36 by hrizkiou          #+#    #+#              #
-#    Updated: 2020/10/20 03:32:51 by hrizkiou         ###   ########.fr        #
+#    Updated: 2020/10/22 03:57:09 by hrizkiou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 # CFLAGS = -Wall -Wextra -Werror
 MFLAGS = -lmlx -framework OpenGL -framework AppKit
-SRCS = main.c mandelbrot.c julia.c burningship.c keyhook.c
+SRCS = main.c mandelbrot.c julia.c burningship.c tricorn.c keyhook.c action.c
 NAME = fractol
 
 # OBJS = $(SRCS:.c=.o)

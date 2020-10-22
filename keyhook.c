@@ -6,16 +6,33 @@
 /*   By: hrizkiou <hrizkiou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 00:56:38 by hrizkiou          #+#    #+#             */
-/*   Updated: 2020/10/20 02:11:45 by hrizkiou         ###   ########.fr       */
+/*   Updated: 2020/10/22 04:04:19 by hrizkiou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "include/fractol.h"
 
-int             key_hook(int key, t_fractal *data)
+int     key_hook(int key, t_fractal *data)
 {
 	if (key == 53)
 		ft_close(data);
+        if (key == 123) // left
+        {
+                ft_move(key, data);
+        }
+        if (key == 124) // right
+                ft_move(key, data);
+        // if (key == 125) // down
+        // if (key == 128) // up
+	return (0);
+}
+
+int     mouse_press_hook(int button, int x, int y, t_fractal *data)
+{
+        // if (button == 1)
+        //         //
+        // else if (button == 2)
+        //         //
 	return (0);
 }
 
